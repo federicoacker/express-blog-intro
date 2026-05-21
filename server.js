@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import blogs from "./data/blogs.js";
 
 const app = express();
@@ -9,6 +10,8 @@ const PRE_LOADED_DATA = blogs.map(element => ({
     ...element,
     img:`${PROTOCOL}${SERVER_URL}:${SERVER_PORT}/${element.img}`
 }));
+
+app.use(cors());
 
 app.use(express.static("public/imgs", {index:false}));
 
