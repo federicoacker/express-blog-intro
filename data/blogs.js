@@ -30,3 +30,5 @@ const blogs = [
         tags: ["deploy", "server", "production"]
     }
 ];
+
+export default blogs;
