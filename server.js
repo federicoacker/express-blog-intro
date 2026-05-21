@@ -16,7 +16,9 @@ app.use(cors());
 app.use(express.static("public/imgs", {index:false}));
 
 app.get("/", (request, response) => {
-    response.send("<h1>Server del mio blog</h1>"); //Semplice response in html che è il type di default
+    response.json({
+        html:"Server del mio blog"
+    }); //Semplice response in html che è il type di default
 })
 
 app.get("/bacheca", (request, response) => {
